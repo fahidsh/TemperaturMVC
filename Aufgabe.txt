@@ -29,4 +29,6 @@ FERTIG 07 - in CelsiusGui, Temperaturänderungsmöglichkeit mithilfe der `hoch` un
     - Diese Änderungen werden auch in nächste Aufgaben nutzlich.
     - Siehe Kommentare in CelsiusGUI für details
 
+FERTIG 08 - in FahrenheitGUI, Temperaturänderungsmöglichkeit implementieren
+FERTIG 09 - in FahrenheitGUI, Temperaturänderungsmöglichkeit mithilfe der `hoch` und `runter` Button implementieren.
 

@@ -7,6 +7,7 @@
 package its.sw;
 
 import java.beans.PropertyChangeEvent;
+import javax.swing.JOptionPane;
 
 
 
@@ -15,7 +16,7 @@ import java.beans.PropertyChangeEvent;
  * @author Oliver Schwahlen
  */
 public class FahrenheitGUI extends javax.swing.JFrame implements ObserverNT.ObserverNT {
-
+    private Controller controller;
 
     /**
      * Creates new form FahrenheitGUI
@@ -23,6 +24,7 @@ public class FahrenheitGUI extends javax.swing.JFrame implements ObserverNT.Obse
      * @param controller eine Referenz auf den Controller
      */
     public FahrenheitGUI(Controller controller) {
+        this.controller = controller;
         initComponents();
 
         // formatierte Ausgabe der Temperatur im Textfeld
@@ -118,15 +120,24 @@ public class FahrenheitGUI extends javax.swing.JFrame implements ObserverNT.Obse
     }// </editor-fold>//GEN-END:initComponents
 
   private void jButtonHochActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHochActionPerformed
-  
+      controller.setFahrenheit(controller.getFahrenheit() + 1);
   }//GEN-LAST:event_jButtonHochActionPerformed
 
   private void jButtonRunterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRunterActionPerformed
-  
+      controller.setFahrenheit(controller.getFahrenheit() - 1);
   }//GEN-LAST:event_jButtonRunterActionPerformed
 
   private void jButtonUebernehmenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUebernehmenActionPerformed
-  
+      try{
+          double tempratur = Double.parseDouble(jTextFieldGrad.getText());
+          controller.setFahrenheit(tempratur);
+      } catch(NumberFormatException ex) {
+          JOptionPane.showMessageDialog(
+                  this, 
+                  "Bitte eine gültige Zahl eingeben", 
+                  "Fehler", 
+                  JOptionPane.ERROR_MESSAGE);
+      }
   }//GEN-LAST:event_jButtonUebernehmenActionPerformed
 
 
