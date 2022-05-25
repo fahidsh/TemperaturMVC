@@ -1,0 +1,12 @@
+Implementieren Sie anhand der Dokumentation für die 
+Temperaturanwendung das Observer-Pattern im Vorgabeprojekt. 
+Die Funktionalität können Sie aus der Lösung ersehen.
+
+- Beginnen Sie damit der Klasse Temperatur den Status "beobachtbar" zu geben.
+- Beim Setzen einer Celsius Temperatur sollen die Beobachter informiert werden.
+
+- Machen Sie dann die GUIs zu Beobachtern und
+- implementieren Sie die Methode propertyChange(..)
+
+- Ergänzen Sie die Methode init() des Controllers um die in der javadoc beschriebenen
+  Programmschritte.
