@@ -11,6 +11,7 @@ public class Controller {
     public static final int ABSTAND_ZWISCHEN_GUIS=30;
     
     // Hier ein privates Attribut der Klasse Temperatur erstellen
+    private Temperatur temperatur = new Temperatur();
 
     
  
@@ -33,7 +34,32 @@ public class Controller {
      * </ul>
      */
     void init() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // Objekte von alle drei Gui-Klassen erstellen
+        CelsiusGUI celsiusGUI = new CelsiusGUI(this);
+        FahrenheitGUI fahrenheitGUI = new FahrenheitGUI(this);
+        ThermometerGUI thermometerGUI = new ThermometerGUI(this);
+        
+        // alle Gui-Objekten als Beobachter der Tempratur hinzufügen
+        temperatur.addObserver(celsiusGUI);
+        temperatur.addObserver(fahrenheitGUI);
+        temperatur.addObserver(thermometerGUI);
+        
+        // Position für Gui-Objekte (wie Aleitung) setzen
+        celsiusGUI.setLocation(AUFTAUCHPUNKT_GUIS, AUFTAUCHPUNKT_GUIS);
+        fahrenheitGUI.setLocation(
+                AUFTAUCHPUNKT_GUIS, 
+                AUFTAUCHPUNKT_GUIS + celsiusGUI.getHeight() + ABSTAND_ZWISCHEN_GUIS);
+        thermometerGUI.setLocation(
+                AUFTAUCHPUNKT_GUIS + celsiusGUI.getWidth() + ABSTAND_ZWISCHEN_GUIS, 
+                AUFTAUCHPUNKT_GUIS);
+        
+        // Gui-Objekte Sichtbar machen
+        celsiusGUI.setVisible(true);
+        fahrenheitGUI.setVisible(true);
+        thermometerGUI.setVisible(true);
+        
+        // Anfangstempratur auf '0' setzen
+        temperatur.setCelsius(0);
     }
 
 

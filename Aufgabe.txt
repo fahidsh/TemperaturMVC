@@ -8,5 +8,15 @@ FERTIG - Beim Setzen einer Celsius Temperatur sollen die Beobachter informiert w
 FERTIG - Machen Sie dann die GUIs zu Beobachtern und
 FERTIG - implementieren Sie die Methode propertyChange(..)
 
-- Ergänzen Sie die Methode init() des Controllers um die in der javadoc beschriebenen
-  Programmschritte.
+FERTIG - Ergänzen Sie die Methode init() des Controllers um die in der javadoc beschriebenen Programmschritte.
+    - Erstellt ein Objekt der Klasse CelsiusGui als Attribut.
+    - Fügt die CelsiusGUI der Temperatur als Beobachter hinzu.
+    - Macht die CelsiusGUI sichtbar und setzt den Auftauchpunkt mit .setLocation(AUFTAUCHPUNKT_GUIS,AUFTAUCHPUNKT_GUIS)
+    - Erstellt ein Objekt der Klasse FahrenheitGui als Attribut.
+    - Fügt die FahrenheitGUI der Temperatur als Beobachter hinzu.
+    - Macht die FahrenheitGUI sichtbar und setzt den Auftauchpunkt mit .setLocation(..) mit ABSTAND_ZWISCHEN_GUIS unter die CelsiusGUI
+    - Erstellt ein Objekt der Klasse ThermometerGUI als Attribut.
+    - Fügt die ThermometerGUI der Temperatur als Beobachter hinzu.
+    - Macht die ThermometerGUI sichtbar und setzt den Auftauchpunkt mit .setLocation(..) mit ABSTAND_ZWISCHEN_GUIS neben die CelsiusGUI
+    - Setzt die Temperatur in Celsius auf 0°
+
