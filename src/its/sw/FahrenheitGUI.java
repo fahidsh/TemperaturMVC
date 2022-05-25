@@ -6,13 +6,15 @@
  */
 package its.sw;
 
+import java.beans.PropertyChangeEvent;
+
 
 
 /**
  *
  * @author Oliver Schwahlen
  */
-public class FahrenheitGUI extends javax.swing.JFrame  {
+public class FahrenheitGUI extends javax.swing.JFrame implements ObserverNT.ObserverNT {
 
 
     /**
@@ -27,6 +29,14 @@ public class FahrenheitGUI extends javax.swing.JFrame  {
 //        jTextFieldGrad.setText(String.format("%.2f", temperatur.getFahrenheit()));
 
     }
+    
+    @Override
+    public void propertyChange(PropertyChangeEvent changeEvent) {
+        // Es ist bekannt das die Tempratur-Klasse diese Meldung schickt
+        // Wird nehmen den Absender und Parsen/Konvertieren als Tempratur-Objekt
+        Temperatur temperatur = (Temperatur) changeEvent.getSource();
+        jTextFieldGrad.setText(temperatur.getFahrenheit() + "");
+    }    
 
     /**
      * This method is called from within the constructor to initialize the form.

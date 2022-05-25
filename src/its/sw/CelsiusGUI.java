@@ -6,13 +6,14 @@
 */
 package its.sw;
 
+import java.beans.PropertyChangeEvent;
 import javax.swing.JFrame;
 
 /**
  *
  * @author Oliver Schwahlen
  */
-public class CelsiusGUI extends JFrame {
+public class CelsiusGUI extends JFrame implements ObserverNT.ObserverNT {
 
     /**
      * Creates new form CelsiusGUI
@@ -25,6 +26,14 @@ public class CelsiusGUI extends JFrame {
         // formatierte Ausgabe der Temperatur im Textfeld
 //        jTextFieldGrad.setText(String.format("%.2f", temperatur.getCelsius()));
 
+    }
+    
+    @Override
+    public void propertyChange(PropertyChangeEvent changeEvent) {
+        // Es ist bekannt das die Tempratur-Klasse diese Meldung schickt
+        // Wird nehmen den Absender und Parsen/Konvertieren als Tempratur-Objekt
+        Temperatur temperatur = (Temperatur) changeEvent.getSource();
+        jTextFieldGrad.setText(temperatur.getCelsius() + "");
     }
 
     /**

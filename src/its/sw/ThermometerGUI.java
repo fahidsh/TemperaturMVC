@@ -11,12 +11,14 @@
  */
 package its.sw;
 
+import java.beans.PropertyChangeEvent;
+
 /**
  *
  * @author Oliver Schwahlen
  * 
  */
-public class ThermometerGUI extends javax.swing.JFrame {
+public class ThermometerGUI extends javax.swing.JFrame implements ObserverNT.ObserverNT {
 
     
 
@@ -29,6 +31,14 @@ public class ThermometerGUI extends javax.swing.JFrame {
         initComponents();
         
     }
+    
+    @Override
+    public void propertyChange(PropertyChangeEvent changeEvent) {
+        // Es ist bekannt das die Tempratur-Klasse diese Meldung schickt
+        // Wird nehmen den Absender und Parsen/Konvertieren als Tempratur-Objekt
+        Temperatur temperatur = (Temperatur) changeEvent.getSource();
+        jProgressBarTemperatur.setValue((int) temperatur.getCelsius());
+    }    
 
     /**
      * This method is called from within the constructor to initialize the form.
