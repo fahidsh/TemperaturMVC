@@ -2,13 +2,13 @@ Implementieren Sie anhand der Dokumentation für die
 Temperaturanwendung das Observer-Pattern im Vorgabeprojekt. 
 Die Funktionalität können Sie aus der Lösung ersehen.
 
-FERTIG - Beginnen Sie damit der Klasse Temperatur den Status "beobachtbar" zu geben.
-FERTIG - Beim Setzen einer Celsius Temperatur sollen die Beobachter informiert werden.
+FERTIG 01 - Beginnen Sie damit der Klasse Temperatur den Status "beobachtbar" zu geben.
+FERTIG 02 - Beim Setzen einer Celsius Temperatur sollen die Beobachter informiert werden.
 
-FERTIG - Machen Sie dann die GUIs zu Beobachtern und
-FERTIG - implementieren Sie die Methode propertyChange(..)
+FERTIG 03 - Machen Sie dann die GUIs zu Beobachtern und
+FERTIG 04 - implementieren Sie die Methode propertyChange(..)
 
-FERTIG - Ergänzen Sie die Methode init() des Controllers um die in der javadoc beschriebenen Programmschritte.
+FERTIG 05 - Ergänzen Sie die Methode init() des Controllers um die in der javadoc beschriebenen Programmschritte.
     - Erstellt ein Objekt der Klasse CelsiusGui als Attribut.
     - Fügt die CelsiusGUI der Temperatur als Beobachter hinzu.
     - Macht die CelsiusGUI sichtbar und setzt den Auftauchpunkt mit .setLocation(AUFTAUCHPUNKT_GUIS,AUFTAUCHPUNKT_GUIS)
@@ -19,4 +19,14 @@ FERTIG - Ergänzen Sie die Methode init() des Controllers um die in der javadoc b
     - Fügt die ThermometerGUI der Temperatur als Beobachter hinzu.
     - Macht die ThermometerGUI sichtbar und setzt den Auftauchpunkt mit .setLocation(..) mit ABSTAND_ZWISCHEN_GUIS neben die CelsiusGUI
     - Setzt die Temperatur in Celsius auf 0°
+
+
+---
+### Extra Aufgaben
+FERTIG 06 - in CelsiusGui, Temperaturänderungsmöglichkeit implementieren
+FERTIG 07 - in CelsiusGui, Temperaturänderungsmöglichkeit mithilfe der `hoch` und `runter` Button implementieren.
+    - Für die Aufgaben 6 und 7, sind in Controller einige Erweiterungen gemacht worden.
+    - Diese Änderungen werden auch in nächste Aufgaben nutzlich.
+    - Siehe Kommentare in CelsiusGUI für details
+
 

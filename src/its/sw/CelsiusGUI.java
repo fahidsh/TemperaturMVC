@@ -8,6 +8,7 @@ package its.sw;
 
 import java.beans.PropertyChangeEvent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,12 +16,14 @@ import javax.swing.JFrame;
  */
 public class CelsiusGUI extends JFrame implements ObserverNT.ObserverNT {
 
+    Controller controller;
     /**
      * Creates new form CelsiusGUI
      *
      * @param controller eine Referenz auf den Controller
      */
     public CelsiusGUI(Controller controller) {
+        this.controller = controller;
         initComponents();
         
         // formatierte Ausgabe der Temperatur im Textfeld
@@ -116,17 +119,49 @@ public class CelsiusGUI extends JFrame implements ObserverNT.ObserverNT {
     }// </editor-fold>//GEN-END:initComponents
 
   private void jButtonHochActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHochActionPerformed
-
+      /**
+       * wir Implementieren Wrapper-Methoden in Controller um aktualle
+       * Tempratur zu holen. Damit wir es dann erhöhen/reduzieren können.
+       * Tempratur kann auch von Gui-TextFeld gelsen werden, da muss aber eine
+       * Parse stattfinden und ist auch Benutzerabhängig, daher Fehler sind 
+       * Möglich, aber wenn wir das Tempratur von Tempratur-Klasse holen,
+       * mussen wir nicht weiteres tun.
+       */
+      controller.setCelsius(controller.getCelsius() + 1);
   
   }//GEN-LAST:event_jButtonHochActionPerformed
 
   private void jButtonRunterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRunterActionPerformed
+      controller.setCelsius(controller.getCelsius() - 1);
 
-  
   }//GEN-LAST:event_jButtonRunterActionPerformed
 
   private void jButtonUebernehmenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUebernehmenActionPerformed
-
+      try{
+        double tempratur = Double.parseDouble(jTextFieldGrad.getText());
+        /**
+         * hier brauchen wir das aktives Instance von Tempratur-Klasse, den
+         * haben wir noch nicht, aber schon bei der Instantiatieren von dieser
+         * Gui-Objekt, wurde das Controller Install mitgegeben. Und Controller
+         * hat den aktiven Instance von Tempratur-Klasse. Daher werden wir in
+         * Controller die Wrapper-Methoden erstellen um tempratur zu setzen.
+         * Die Wrapper-Methoden werden die entsprechende Methode von Tempratur-
+         * Klasse aufrufen um den Tempratur zu setzen.
+         * 
+         * Obwohl diese Instance von Gui eine Objekt von Controller bekommen,
+         * es wurde hier nicht gespeichert, dieses muss man in die Konstruktor
+         * ändern und Controller als lokal-Private Objekt speichern.
+         */
+        
+        controller.setCelsius(tempratur);
+        
+      } catch(NumberFormatException ex) {
+          JOptionPane.showMessageDialog(
+                  this, 
+                  "Bitte eine gültige Zahl eingeben", 
+                  "Fehler", 
+                  JOptionPane.ERROR_MESSAGE);
+      }
   
   }//GEN-LAST:event_jButtonUebernehmenActionPerformed
 

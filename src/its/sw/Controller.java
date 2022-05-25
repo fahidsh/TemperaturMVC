@@ -61,7 +61,21 @@ public class Controller {
         // Anfangstempratur auf '0' setzen
         temperatur.setCelsius(0);
     }
-
-
+    
+    public void setCelsius(double tempraturInCensius) {
+        temperatur.setCelsius(tempraturInCensius);
+    }
+    
+    public void setFahrenheit(double tempraturInFahrenheit) {
+        temperatur.setFahrenheit(tempraturInFahrenheit);
+    }
+    
+    public double getCelsius(){
+        return temperatur.getCelsius();
+    }
+    
+    public double getFahrenheit() {
+        return temperatur.getFahrenheit();
+    }
 
 }
