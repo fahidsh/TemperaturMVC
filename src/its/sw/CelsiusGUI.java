@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class CelsiusGUI extends JFrame implements ObserverNT.ObserverNT {
 
-    Controller controller;
+    private Controller controller;
     /**
      * Creates new form CelsiusGUI
      *
