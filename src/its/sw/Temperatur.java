@@ -7,8 +7,12 @@ package its.sw;
 public class Temperatur extends ObserverNT.ObservableNT {
 
     public static final String PROP_TEMPERATUR = "temperatur";
-
-    private double temperatur = 0.0; // Celsiustemperatur
+    /**
+     * Wert von tempratur, von 0.0 auf 0.0001 getsetzt, dabei wird beim Start
+     * eine PropertyChangeEvent stattfinden und die TextBoxen in Guis werden
+     * nicht mehr leer angezeigt.
+     */
+    private double temperatur = 0.0001; // Celsiustemperatur
 
     /**
      * @return the temperatur in °C
