@@ -4,7 +4,7 @@ package its.sw;
  *
  * @author Oliver Schwahlen Angepasst am 20.05.2022 von @author Erhard Volz
  */
-public class Temperatur {
+public class Temperatur extends ObserverNT.ObservableNT {
 
     public static final String PROP_TEMPERATUR = "temperatur";
 
