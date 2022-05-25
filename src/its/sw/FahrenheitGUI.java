@@ -35,7 +35,7 @@ public class FahrenheitGUI extends javax.swing.JFrame implements ObserverNT.Obse
         // Es ist bekannt das die Tempratur-Klasse diese Meldung schickt
         // Wird nehmen den Absender und Parsen/Konvertieren als Tempratur-Objekt
         Temperatur temperatur = (Temperatur) changeEvent.getSource();
-        jTextFieldGrad.setText(temperatur.getFahrenheit() + "");
+        jTextFieldGrad.setText(String.format("%.2f", temperatur.getFahrenheit()));
     }    
 
     /**

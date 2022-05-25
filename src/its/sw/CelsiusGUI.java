@@ -36,7 +36,7 @@ public class CelsiusGUI extends JFrame implements ObserverNT.ObserverNT {
         // Es ist bekannt das die Tempratur-Klasse diese Meldung schickt
         // Wird nehmen den Absender und Parsen/Konvertieren als Tempratur-Objekt
         Temperatur temperatur = (Temperatur) changeEvent.getSource();
-        jTextFieldGrad.setText(temperatur.getCelsius() + "");
+        jTextFieldGrad.setText(String.format("%.2f", temperatur.getCelsius()));
     }
 
     /**
