@@ -3,7 +3,7 @@ Temperaturanwendung das Observer-Pattern im Vorgabeprojekt.
 Die Funktionalität können Sie aus der Lösung ersehen.
 
 FERTIG - Beginnen Sie damit der Klasse Temperatur den Status "beobachtbar" zu geben.
-- Beim Setzen einer Celsius Temperatur sollen die Beobachter informiert werden.
+FERTIG - Beim Setzen einer Celsius Temperatur sollen die Beobachter informiert werden.
 
 - Machen Sie dann die GUIs zu Beobachtern und
 - implementieren Sie die Methode propertyChange(..)

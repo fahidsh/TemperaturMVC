@@ -30,7 +30,13 @@ public class Temperatur extends ObserverNT.ObservableNT {
      * @param temperatur the temperatur in °C to set
      */
     public void setCelsius(double temperatur) {
+        // alte Tempratur speichern
+        double alteTempratur = this.temperatur; 
+
         this.temperatur = temperatur;
+
+        // Observers informieren
+        notifyObservers(PROP_TEMPERATUR, alteTempratur, temperatur);
     }
 
     /**
