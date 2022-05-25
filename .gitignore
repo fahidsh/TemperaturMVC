@@ -1,0 +1,6 @@
+/build/
+/extras/
+/dist/
+/nbproject/private/
+README.md
+.gitignore
