@@ -12,9 +12,13 @@ public class Controller {
     
     // Hier ein privates Attribut der Klasse Temperatur erstellen
     private Temperatur temperatur = new Temperatur();
+    
+    // Objekte von alle drei Gui-Klassen erstellen
+    CelsiusGUI celsiusGUI = null;
+    FahrenheitGUI fahrenheitGUI = null;
+    ThermometerGUI thermometerGUI = null;
 
     
- 
     /**
      * Initialisiert alle Attribute.
      * <ul>
@@ -35,9 +39,9 @@ public class Controller {
      */
     void init() {
         // Objekte von alle drei Gui-Klassen erstellen
-        CelsiusGUI celsiusGUI = new CelsiusGUI(this);
-        FahrenheitGUI fahrenheitGUI = new FahrenheitGUI(this);
-        ThermometerGUI thermometerGUI = new ThermometerGUI(this);
+        celsiusGUI = new CelsiusGUI(this);
+        fahrenheitGUI = new FahrenheitGUI(this);
+        thermometerGUI = new ThermometerGUI(this);
         
         // alle Gui-Objekten als Beobachter der Tempratur hinzufügen
         temperatur.addObserver(celsiusGUI);
@@ -70,7 +74,7 @@ public class Controller {
         temperatur.setFahrenheit(tempraturInFahrenheit);
     }
     
-    public double getCelsius(){
+    public double getCelsius() {
         return temperatur.getCelsius();
     }
     

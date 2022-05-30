@@ -60,6 +60,17 @@ public class FahrenheitGUI extends javax.swing.JFrame implements ObserverNT.Obse
 
         jLabel1.setText("in °F");
 
+        jTextFieldGrad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldGradActionPerformed(evt);
+            }
+        });
+        jTextFieldGrad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldGradKeyPressed(evt);
+            }
+        });
+
         jButtonUebernehmen.setText("übernehmen");
         jButtonUebernehmen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +152,22 @@ public class FahrenheitGUI extends javax.swing.JFrame implements ObserverNT.Obse
                   JOptionPane.ERROR_MESSAGE);
       }
   }//GEN-LAST:event_jButtonUebernehmenActionPerformed
+
+    private void jTextFieldGradActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldGradActionPerformed
+        jButtonUebernehmen.doClick();
+    }//GEN-LAST:event_jTextFieldGradActionPerformed
+
+    private void jTextFieldGradKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldGradKeyPressed
+        // Nach Oben: KeyCode 38, nach Unten: KeyCode: 40
+        switch (evt.getKeyCode()) {
+            case 38:
+                jButtonHoch.doClick();
+                break;
+            case 40:
+                jButtonRunter.doClick();
+                break;
+        }
+    }//GEN-LAST:event_jTextFieldGradKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -37,7 +37,7 @@ public class ThermometerGUI extends javax.swing.JFrame implements ObserverNT.Obs
         // Es ist bekannt das die Tempratur-Klasse diese Meldung schickt
         // Wird nehmen den Absender und Parsen/Konvertieren als Tempratur-Objekt
         Temperatur temperatur = (Temperatur) changeEvent.getSource();
-        jProgressBarTemperatur.setValue((int) temperatur.getCelsius());
+        jProgressBarTemperatur.setValue((int) Math.round(temperatur.getCelsius()));
     }    
 
     /**

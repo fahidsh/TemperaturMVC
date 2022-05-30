@@ -35,12 +35,12 @@ public class Temperatur extends ObserverNT.ObservableNT {
      */
     public void setCelsius(double temperatur) {
         // alte Tempratur speichern
-        double alteTempratur = this.temperatur; 
+        double altTemperatur = this.temperatur;
 
         this.temperatur = temperatur;
 
         // Observers informieren
-        notifyObservers(PROP_TEMPERATUR, alteTempratur, temperatur);
+        notifyObservers(PROP_TEMPERATUR, altTemperatur, this.temperatur);
     }
 
     /**
