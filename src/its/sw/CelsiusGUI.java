@@ -138,7 +138,9 @@ public class CelsiusGUI extends JFrame implements ObserverNT.ObserverNT {
 
   private void jButtonUebernehmenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUebernehmenActionPerformed
       try{
-        double tempratur = Double.parseDouble(jTextFieldGrad.getText());
+        double tempratur = Double.parseDouble(
+                jTextFieldGrad.getText().replace(",", "."));
+        
         /**
          * hier brauchen wir das aktives Instance von Tempratur-Klasse, den
          * haben wir noch nicht, aber schon bei der Instantiatieren von dieser

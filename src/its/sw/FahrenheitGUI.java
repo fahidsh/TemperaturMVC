@@ -129,7 +129,9 @@ public class FahrenheitGUI extends javax.swing.JFrame implements ObserverNT.Obse
 
   private void jButtonUebernehmenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUebernehmenActionPerformed
       try{
-          double tempratur = Double.parseDouble(jTextFieldGrad.getText());
+          double tempratur = Double.parseDouble(
+                  jTextFieldGrad.getText().replace(",", "."));
+          
           controller.setFahrenheit(tempratur);
       } catch(NumberFormatException ex) {
           JOptionPane.showMessageDialog(
